@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\RailwayTicketSystem\\RailwayTicketSystem.csproj": {}
+    "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\RailwayTicketSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\RailwayTicketSystem\\RailwayTicketSystem.csproj": {
+    "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\RailwayTicketSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\RailwayTicketSystem\\RailwayTicketSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\RailwayTicketSystem.csproj",
         "projectName": "RailwayTicketSystem",
-        "projectPath": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\RailwayTicketSystem\\RailwayTicketSystem.csproj",
+        "projectPath": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\RailwayTicketSystem.csproj",
         "packagesPath": "C:\\Users\\Computer Clinic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\RailwayTicketSystem\\obj\\",
+        "outputPath": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
