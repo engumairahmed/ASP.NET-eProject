@@ -13,5 +13,9 @@ namespace RailwayTicketSystem.Controllers
         {
             return View();
         }
+        public IActionResult Booking()
+        {
+            return View();
+        }
     }
 }

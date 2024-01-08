@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WO7z+PkRXzwQow9+i/MNk4clNhXq3iWCZ9dzin4LFA4=",
+  "Hash": "ZjDff0cjj1iVwAc9rbpPJenpD1rQbwEIY7PYPNdIv6U=",
   "Source": "RailwayTicketSystem",
   "BasePath": "_content/RailwayTicketSystem",
   "Mode": "Default",
@@ -34219,6 +34219,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\images\\offer_img05.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\wwwroot\\img\\logo\\02.png",
+      "SourceId": "RailwayTicketSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\wwwroot\\",
+      "BasePath": "_content/RailwayTicketSystem",
+      "RelativePath": "img/logo/02.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo\\02.png"
+    },
+    {
+      "Identity": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\wwwroot\\img\\logo\\0q.png",
+      "SourceId": "RailwayTicketSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\wwwroot\\",
+      "BasePath": "_content/RailwayTicketSystem",
+      "RelativePath": "img/logo/0q.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo\\0q.png"
     },
     {
       "Identity": "C:\\Users\\Computer Clinic\\Desktop\\eProject\\RailwayTicketSystem\\ASP.NET-eProject\\RailwayTicketSystem\\wwwroot\\img\\logo\\logo.png",

@@ -79,6 +79,11 @@ a:hover,
 	color: #ffa903;
 	text-decoration: none;
 }
+.black-anchor {
+	outline: medium none;
+	text-decoration: none;
+	color:black;
+}
 a,
 button {
 	outline: medium none;
@@ -117,7 +122,7 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-	color: inherit;
+	color: black;
 }
 h1 {
 	font-size: 40px;
@@ -3501,6 +3506,7 @@ label {
 	text-transform: uppercase;
 	min-width: 160px;
 	justify-content: center;
+	
 }
 #contact-map iframe {
 	width: 100%;

@@ -59,11 +59,7 @@
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-md-block">
-                                    <ul>
-                                        <li class="question"><a href="contact.html">?</a></li>
-                                        <li class="header-btn"><a asp-area="Identity" asp-page="/Account/Register" class="btn">Register</a></li>
-                                        <li class="header-btn sign-in"><a asp-area="Identity" asp-page="/Account/Login" class="btn">Sign In</a></li>
-                                    </ul>
+                                    <partial name="_LoginPartial" />
                                 </div>
                             </nav>
                         </div>

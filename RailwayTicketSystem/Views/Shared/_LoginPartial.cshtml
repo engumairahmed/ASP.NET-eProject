@@ -2,25 +2,25 @@
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
-<ul class="navbar-nav">
+<ul>
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hi @User.Identity?.Name!</a>
-    </li>
-    <li class="nav-item">
+        <li class="nav-link">
+        <a class="text-light nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hi @User.Identity?.Name!</a>
+        </li>
+        <li class="header-btn">
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="btn btn-primary">Logout</button>
+            <button  type="submit" class="btn">Logout</button>
         </form>
     </li>
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    <li class="header-btn">
+        <a class="btn" asp-area="Identity" asp-page="/Account/Register">Register</a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    <li class="header-btn">
+        <a class="btn" asp-area="Identity" asp-page="/Account/Login">Login</a>
     </li>
 }
 </ul>

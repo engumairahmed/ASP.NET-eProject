@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - RailwayTicketSystem</title>
+    <title>@ViewData["Title"] - ORTS</title>
     <link rel="stylesheet" href="~/css/bootstrap.min.css">
     @* <link rel="stylesheet" href="~/css/default.css" /> *@
     <link rel="stylesheet" href="~/css/style.css" />
@@ -36,31 +36,27 @@
                                 <div class="logo"><a href="index.html"><img src="~/img/logo/logo.png" alt=""></a></div>
                                 <div class="navbar-wrap main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active"><a href="index.html">Home</a></li>
+                                        <li class="active"><a asp-action="index" asp-controller="Home">Home</a></li>
+                                        <li><a asp-action="Booking" asp-controller="User">Booking</a></li>
+                                        <li><a href="about.html">Schedules</a></li>
                                         <li><a href="about.html">About</a></li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Pages</a>
-                                            <ul class="submenu">
-                                                <li><a href="booking-list.html">Booking List</a></li>
-                                                <li><a href="booking-details.html">Booking Details</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item-has-children">
-                                            <a href="#">Blog</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Our Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                            </ul>
-                                        </li>
                                         <li><a href="contact.html">Contact</a></li>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <li><a asp-action="AdminDashboard" asp-controller="Admin">Dhasboard</a></li>
+                                        } 
+                                        else if(User.IsInRole("User"))
+                                        {
+                                            <li><a asp-action="UserDashboard" asp-controller="User">Dhasboard</a></li>
+                                        }
+                                        else
+                                        {
+                                            
+                                        }
                                     </ul>
                                 </div>
                                 <div class="header-action d-none d-md-block">
-                                    <ul>
-                                        <li class="question"><a href="contact.html">?</a></li>
-                                        <li class="header-btn"><a asp-area="Identity" asp-page="/Account/Register" class="btn">Register</a></li>
-                                        <li class="header-btn sign-in"><a asp-area="Identity" asp-page="/Account/Login" class="btn">Sign In</a></li>
-                                    </ul>
+                                    <partial name="_LoginPartial" />
                                 </div>
                             </nav>
                         </div>
@@ -69,7 +65,7 @@
                             <nav class="menu-box">
                                 <div class="close-btn"><i class="fa-solid fa-xmark"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html"><img src="~/img/logo/logo_02.png" alt="" title=""></a>
+                                    <a asp-action="home" asp-controller="Home"><img src="~/img/logo/logo_02.png" alt="" title=""></a>
                                 </div>
                                 <div class="menu-outer">
                                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
