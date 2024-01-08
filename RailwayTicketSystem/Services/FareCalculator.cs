@@ -46,7 +46,7 @@ namespace RailwayTicketSystem.Services
             //    .Select(sd => sd.Distance)
             //    .FirstOrDefault();
 
-            return distance;
+            return totalDistance;
         }
 
         private decimal GetFareRate(string trainType)

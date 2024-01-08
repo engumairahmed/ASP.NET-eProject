@@ -28,6 +28,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcUGVyc29uYWxEYXRhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/Manage/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX0xheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -74,6 +82,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/_UserLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVXNlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
@@ -122,6 +138,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/User/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/User/UserDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/User/_UserLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfVXNlckxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/User/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/User/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxfVmlld1N0YXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Computer Clinic/Desktop/eProject/RailwayTicketSystem/ASP.NET-eProject/RailwayTicketSystem/Views/_ViewImports.cshtml]

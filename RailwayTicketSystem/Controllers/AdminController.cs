@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace RailwayTicketSystem.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -20,7 +21,7 @@ namespace RailwayTicketSystem.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<ActionResult> Assign(string email)
+        public async Task<ActionResult> Assign(string email,string role)
         {
             var user = await _userManager.FindByEmailAsync(email);
 
@@ -44,7 +45,7 @@ namespace RailwayTicketSystem.Controllers
             }
         }
         [Authorize(Roles ="Admin")]
-        public IActionResult dashboard()
+        public IActionResult AdminDashboard()
         {
             return View();
         }

@@ -21,11 +21,13 @@ namespace RailwayTicketSystem.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly ILogger<LoginModel> _logger;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<IdentityUser> signInManager, ILogger<LoginModel> logger, UserManager<IdentityUser> userManager)
         {
             _signInManager = signInManager;
             _logger = logger;
+            _userManager = userManager;
         }
 
         /// <summary>
@@ -112,11 +114,37 @@ namespace RailwayTicketSystem.Areas.Identity.Pages.Account
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
                 var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+
+
+                //if (result.Succeeded)
+                //{
+                //    _logger.LogInformation("User logged in.");
+                //    return LocalRedirect(returnUrl);
+                //}
+
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+
+                    if (await _userManager.IsInRoleAsync(user, "Admin"))
+                    {
+                        // Redirect to admin dashboard or any other admin view
+                        return RedirectToAction("AdminDashboard", "Admin");
+                    }
+                    else if (await _userManager.IsInRoleAsync(user, "User"))
+                    {
+                        // Redirect to user dashboard or any other user view
+                        return RedirectToAction("UserDashboard", "User");
+                    }
+                    else
+                    {
+                        // Handle roles not defined
+                        return RedirectToAction("Index", "Home");
+                    }
                 }
+
+
+
                 if (result.RequiresTwoFactor)
                 {
                     return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });

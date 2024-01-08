@@ -6,11 +6,11 @@ namespace RailwayTicketSystem.Models
     {
         [Key]
         public int StationDistanceId { get; set; }
-        public int FromStation { get; set; }
-        public int ToStation { get; set; }
+        public int FromStationId { get; set; }
+        public int ToStationId { get; set; }
         public int Distance { get; set; }
 
-        public ICollection<Station> FStations {  get; set; }
-        public ICollection<Station> TStations { get; set; }
+        public Station FromStation {  get; set; }
+        public Station ToStation { get; set; }
     }
 }

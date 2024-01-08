@@ -1,5 +1,7 @@
 ﻿@{
     ViewData["Title"] = "ORTS-Dashboard";
+    Layout = User.IsInRole("Admin") ? "_AdminLayout" : "_Layout";
 }
+<h1>Admin Dashboard</h1>
 
 

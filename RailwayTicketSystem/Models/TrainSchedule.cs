@@ -15,6 +15,6 @@ namespace RailwayTicketSystem.Models
 
         // Navigation properties
         public TrainDetail Train { get; set; }
-        public StationDetail Station { get; set; }
+        public Station Station { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace RailwayTicketSystem.Models
         public string PNRNumber { get; set; }
         public int SeatNumber { get; set; }
         public string CoachNumber { get; set; }
-        public decimal Fare { get; set; }
+        public int Fare { get; set; }
         public DateTime ReservationDate { get; set; }
 
         // Navigation properties

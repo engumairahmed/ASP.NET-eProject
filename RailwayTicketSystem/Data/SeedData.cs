@@ -30,32 +30,34 @@ namespace RailwayTicketSystem.Data
             }
             int length = userNames.Length;
 
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < length; i++)
             {
-                string name = "Admin";
-                string email = "admin@mail.com"; 
-                string password = "Admin@123";
-                string role = roleNames[0];
+                string email = userEmails[i]; 
+                string password = userPasses[i];
+                string role = roleNames[i];
+                string name = userNames[i];
 
                 IdentityUser user = await userManager.FindByEmailAsync(email);
 
                 if (user == null)
                 {
-                   
+
                     user = new IdentityUser()
                     {
-                        UserName = name,
+                        UserName = email,
                         Email = email,
+                        EmailConfirmed = true
                     };
 
                     var createUser =await userManager.CreateAsync(user, password);
 
 
                     //code = Encoding.UTF8.GetString(WebEncoders.Base64UrlDecode(code));
-                    //var result = await userManager.ConfirmEmailAsync(user, code);
-                    
+                    var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
+                    var result = await userManager.ConfirmEmailAsync(user, token);
+
                     //if(createUser.Succeeded)
-                        
+
                     //{
                     //        var userId = await userManager.GetUserIdAsync(user);
                     //        //var code = await userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -64,9 +66,9 @@ namespace RailwayTicketSystem.Data
                     //        var token = await userManager.GenerateEmailConfirmationTokenAsync(user);
                     //        var res = await userManager.ConfirmEmailAsync(user, token);
                     //        Console.WriteLine(res);
-                        
+
                     //}   
-                   
+
 
                     if (!await userManager.IsInRoleAsync(user, role))
                     {

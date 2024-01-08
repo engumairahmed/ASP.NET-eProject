@@ -221,34 +221,7 @@ label {
 }
 
 /* button style */
-.btn {
-	user-select: none;
-	-moz-user-select: none;
-	background: #ffa903 none repeat scroll 0 0;
-	border: medium none;
-	border-radius: 5px;
-	color: #2a2a2a;
-	cursor: pointer;
-	display: inline-flex;
-	font-size: 18px;
-	align-items: center;
-	font-weight: 600;
-	letter-spacing: 0;
-	line-height: 1;
-	margin-bottom: 0;
-	padding: 18px 23px;
-	text-align: center;
-	text-transform: capitalize;
-	touch-action: manipulation;
-	transition: all 0.3s ease 0s;
-	vertical-align: middle;
-	white-space: nowrap;
-	font-family: 'Barlow', sans-serif;
-}
-.btn:hover {
-	color: #fff;
-	background: #622243;
-}
+
 .btn i {
 	line-height: 0;
 	margin-left: 10px;
@@ -793,7 +766,7 @@ label {
 .slider-bg {
 	background-size: cover;
 	background-position: center;
-	min-height: 700px;
+	min-height: 400px;
 	position: relative;
 	display: flex !important;
 	align-items: center;
@@ -828,7 +801,7 @@ label {
 
 /* 5. Breadcrumb */
 .breadcrumb-bg {
-	background-image: url(../img/bg/breadcrumb-bg.jpg);
+	background-image: url(~/img/bg/breadcrumb-bg.jpg);
 	background-size: cover;
 	background-position: center;
 	position: relative;
