@@ -9,14 +9,14 @@ namespace RailwayTicketSystem.Models
         public int ReservationId { get; set; }
 
         // Foreign keys
-        public int TrainScheduleId { get; set; }
-        public string UserId { get; set; } 
+        public int? TrainScheduleId { get; set; }
+        public string? UserId { get; set; } 
 
 
-        public string PNRNumber { get; set; }
-        public int SeatNumber { get; set; }
-        public string CoachNumber { get; set; }
-        public int Fare { get; set; }
+        public string? PNRNumber { get; set; }
+        public int? SeatNumber { get; set; }
+        public string? CoachNumber { get; set; }
+        public int? Fare { get; set; }
         public DateTime ReservationDate { get; set; }
 
         // Navigation properties

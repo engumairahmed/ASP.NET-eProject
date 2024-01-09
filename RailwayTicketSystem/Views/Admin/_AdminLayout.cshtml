@@ -12,8 +12,14 @@
     <!-- Custom styles for this template -->
     <link href="~/admin/css/sb-admin-2.min.css" rel="stylesheet">
 
+    @* <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" /> *@
+
     <!-- Custom styles for this page -->
     <link href="~/admin/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
+    <script src="~/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body id="page-top">
@@ -25,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" asp-action="AdminDashboard" asp-controller="Admin">
                 <div class="sidebar-brand-icon">
                     <i class="fas fa-subway"></i>
                 </div>
@@ -37,7 +43,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" asp-action="AdminDashboard" asp-controller="Admin">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span>
                 </a>
@@ -56,13 +62,13 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                    aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Components</span>
+                    <span>Manage Trains</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Custom Components:</h6>
-                        <a class="collapse-item" href="buttons.html">Buttons</a>
-                        <a class="collapse-item" href="cards.html">Cards</a>
+                        <a class="collapse-item" asp-action="Train" asp-controller="Admin">Add Train</a>
+                        <a class="collapse-item" asp-action="ViewTrains" asp-controller="Admin">View Tarins</a>
                     </div>
                 </div>
             </li>
@@ -72,7 +78,7 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                    aria-expanded="true" aria-controls="collapseUtilities">
                     <i class="fas fa-fw fa-wrench"></i>
-                    <span>Utilities</span>
+                    <span>Users</span>
                 </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                      data-parent="#accordionSidebar">
@@ -406,9 +412,17 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="~/admin/vendor/jquery/jquery.min.js"></script>
-    <script src="~/admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".alert").addClass("d-none");
+            }, 2000);
+        });
+    </script>
+
+   
+
+ 
 
     <!-- Core plugin JavaScript-->
     <script src="~/admin/vendor/jquery-easing/jquery.easing.min.js"></script>
@@ -417,13 +431,13 @@
     <script src="~/admin/js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="~/admin/vendor/chart.js/Chart.min.js"></script>
+   @*  <script src="~/admin/vendor/chart.js/Chart.min.js"></script> *@
     <script src="~/admin/vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="~/admin/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="~/admin/js/demo/chart-area-demo.js"></script>
-    <script src="~/admin/js/demo/chart-pie-demo.js"></script>
+    @* <script src="~/admin/js/demo/chart-area-demo.js"></script> *@
+    @* <script src="~/admin/js/demo/chart-pie-demo.js"></script> *@
 
 </body>
     

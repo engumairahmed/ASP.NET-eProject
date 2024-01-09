@@ -3,12 +3,18 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using RailwayTicketSystem.Models;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
 using System.Reflection.Emit;
 
 namespace RailwayTicketSystem.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
+        public ApplicationDbContext()
+        {
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -23,21 +29,11 @@ namespace RailwayTicketSystem.Data
         public DbSet<TrainSchedule> TrainSchedules { get; set; }
         public DbSet<StationDistance> StationDistances { get; set; }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        => optionsBuilder.UseSqlServer("Server=DESKTOP-P0ITGTA\\SQLEXPRESS;Database=new_orts;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true");
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-                //builder.Entity<StationDistance>()
-                //    .HasOne(sd => sd.FromStationId)
-                //    .WithMany(s => s.DistancesFrom)
-                //    .HasForeignKey(sd => sd.FromStation)
-                //    .OnDelete(DeleteBehavior.Restrict);
-
-                //builder.Entity<StationDistance>()
-                //    .HasOne(sd => sd.ToStationId)
-                //    .WithMany(s => s.DistancesTo)
-                //    .HasForeignKey(sd => sd.ToStationId)
-                //    .OnDelete(DeleteBehavior.Restrict);
-
 
             base.OnModelCreating(builder);
 
@@ -56,31 +52,7 @@ namespace RailwayTicketSystem.Data
                 .HasForeignKey(sd => sd.ToStationId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            //a hasher to hash the password before seeding the user to the db
-            //var hasher = new PasswordHasher<IdentityUser>();
-
-
-            //Seeding the User to AspNetUsers table
-           //builder.Entity<IdentityUser>().HasData(
-           //     new IdentityUser
-           //     {
-           //         Id = "8e445865-a24d-4543-a6c6-9443d048cdb9", // primary key
-           //         UserName = "myuser",
-           //         NormalizedUserName = "MYUSER",
-           //         PasswordHash = hasher.HashPassword(null, "Pa$$w0rd"),
-           //         EmailConfirmed= true,
-           //     }
-           // );
-
-
-            //Seeding the relation between our user and role to AspNetUserRoles table
-            //builder.Entity<IdentityUserRole<string>>().HasData(
-            //    new IdentityUserRole<string>
-            //    {
-            //        RoleId = "2c5e174e-3b0e-446f-86af-483d56fd7210",
-            //        UserId = "8e445865-a24d-4543-a6c6-9443d048cdb9"
-            //    }
-            //);
+           
         }
 
         

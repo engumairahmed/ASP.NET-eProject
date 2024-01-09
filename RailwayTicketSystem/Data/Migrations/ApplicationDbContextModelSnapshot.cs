@@ -255,38 +255,33 @@ namespace RailwayTicketSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PassengerId"), 1L, 1);
 
-                    b.Property<int>("Age")
+                    b.Property<int?>("Age")
                         .HasColumnType("int");
 
                     b.Property<string>("Class")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("DateOfTravel")
+                    b.Property<DateTime?>("DateOfTravel")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Gender")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("TotalPassenger")
+                    b.Property<int?>("TotalPassenger")
                         .HasColumnType("int");
 
-                    b.Property<string>("TrainNo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("TrainNumber")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("TrainT_Id")
+                        .HasColumnType("int");
 
                     b.HasKey("PassengerId");
 
-                    b.HasIndex("TrainNo");
+                    b.HasIndex("TrainT_Id");
 
                     b.ToTable("PassengerDetails");
                 });
@@ -412,8 +407,11 @@ namespace RailwayTicketSystem.Data.Migrations
 
             modelBuilder.Entity("RailwayTicketSystem.Models.TrainDetail", b =>
                 {
-                    b.Property<string>("TrainNo")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("T_Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("T_Id"), 1L, 1);
 
                     b.Property<int>("AC1")
                         .HasColumnType("int");
@@ -424,9 +422,6 @@ namespace RailwayTicketSystem.Data.Migrations
                     b.Property<int>("AC3")
                         .HasColumnType("int");
 
-                    b.Property<TimeSpan>("DepartureTime")
-                        .HasColumnType("time");
-
                     b.Property<int>("General")
                         .HasColumnType("int");
 
@@ -434,7 +429,6 @@ namespace RailwayTicketSystem.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Route")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Sleeper")
@@ -444,7 +438,10 @@ namespace RailwayTicketSystem.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("TrainNo");
+                    b.Property<int>("TrainNo")
+                        .HasColumnType("int");
+
+                    b.HasKey("T_Id");
 
                     b.ToTable("TrainDetails");
                 });
@@ -469,18 +466,18 @@ namespace RailwayTicketSystem.Data.Migrations
                     b.Property<int>("StationId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TrainNo")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("TrainNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TrainT_Id")
+                        .HasColumnType("int");
 
                     b.HasKey("ScheduleId");
 
                     b.HasIndex("StationId");
 
-                    b.HasIndex("TrainNo");
+                    b.HasIndex("TrainT_Id");
 
                     b.ToTable("TrainSchedules");
                 });
@@ -540,9 +537,7 @@ namespace RailwayTicketSystem.Data.Migrations
                 {
                     b.HasOne("RailwayTicketSystem.Models.TrainDetail", "Train")
                         .WithMany("Passengers")
-                        .HasForeignKey("TrainNo")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TrainT_Id");
 
                     b.Navigation("Train");
                 });
@@ -595,7 +590,9 @@ namespace RailwayTicketSystem.Data.Migrations
 
                     b.HasOne("RailwayTicketSystem.Models.TrainDetail", "Train")
                         .WithMany("Schedules")
-                        .HasForeignKey("TrainNo");
+                        .HasForeignKey("TrainT_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.Navigation("Station");
 

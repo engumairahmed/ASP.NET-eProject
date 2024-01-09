@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using RailwayTicketSystem.Data;
+using RailwayTicketSystem.Models;
 
 namespace RailwayTicketSystem.Controllers
 {
     [Authorize(Roles = "Admin")]
+
     public class AdminController : Controller
     {
         private readonly RoleManager<IdentityRole> _roleManager;
@@ -14,6 +17,8 @@ namespace RailwayTicketSystem.Controllers
             _roleManager = roleManager;
             _userManager = userManager;
         }
+
+        ApplicationDbContext db = new ApplicationDbContext();
 
         [HttpGet]
         public IActionResult Assign()
@@ -44,10 +49,30 @@ namespace RailwayTicketSystem.Controllers
                 return RedirectToAction("UserNotFound");
             }
         }
-        [Authorize(Roles ="Admin")]
         public IActionResult AdminDashboard()
         {
             return View();
+        }
+
+        public IActionResult Train()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddTrain(TrainDetail Train)
+        {
+            db.TrainDetails.Add(Train);
+            await db.SaveChangesAsync();
+            TempData["success"] = "Train added successfully";
+            return RedirectToAction("Train");
+        }
+
+        [HttpGet]
+        public IActionResult ViewTrains()
+        {
+            var trains = db.TrainDetails.ToList();
+            return View(trains);
         }
     }
 }

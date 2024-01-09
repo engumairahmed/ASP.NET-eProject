@@ -6,8 +6,8 @@ namespace RailwayTicketSystem.Models
     {
         [Key]
         public int Id { get; set; }
-        public int Distance { get; set; }
-        public int TypeOfCompartment { get; set; }
-        public string TypeOfTrain { get; set; }
+        public int? Distance { get; set; }
+        public int? TypeOfCompartment { get; set; }
+        public string? TypeOfTrain { get; set; }
     }
 }
