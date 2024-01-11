@@ -69,13 +69,13 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.FromStationId,
                         principalTable: "Stations",
                         principalColumn: "StationId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_StationDistances_Stations_ToStationId",
                         column: x => x.ToStationId,
                         principalTable: "Stations",
                         principalColumn: "StationId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -96,13 +96,13 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.CompartmentId,
                         principalTable: "Compartments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Coaches_Trains_TrainId",
                         column: x => x.TrainId,
                         principalTable: "Trains",
                         principalColumn: "T_Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -124,13 +124,13 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.Compartment,
                         principalTable: "Compartments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_FareDetails_Trains_Train",
                         column: x => x.Train,
                         principalTable: "Trains",
                         principalColumn: "T_Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -151,13 +151,13 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.CompartmentId,
                         principalTable: "Compartments",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_TrainCompartments_Trains_TrainId",
                         column: x => x.TrainId,
                         principalTable: "Trains",
                         principalColumn: "T_Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -180,13 +180,13 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.StationId,
                         principalTable: "Stations",
                         principalColumn: "StationId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_TrainRoutes_Trains_TrainId",
                         column: x => x.TrainId,
                         principalTable: "Trains",
                         principalColumn: "T_Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -214,13 +214,13 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.RouteId,
                         principalTable: "TrainRoutes",
                         principalColumn: "RouteId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_TrainSchedules_Trains_TrainId",
                         column: x => x.TrainId,
                         principalTable: "Trains",
                         principalColumn: "T_Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -250,7 +250,7 @@ namespace RailwayTicketSystem.Data.Migrations
                         column: x => x.TrainScheduleId,
                         principalTable: "TrainSchedules",
                         principalColumn: "ScheduleId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(

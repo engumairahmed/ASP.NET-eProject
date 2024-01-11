@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model IEnumerable<RailwayTicketSystem.Models.Compartment>
+
+<div class="container">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Compartment Types</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>ID</th>
+                            <th>Type</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{
+                            foreach (var items in Model)
+                            {
+                                <tr>
+                                    <td>@items.Id</td>
+                                    <td>@items.CompartmentName</td>
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -67,6 +67,12 @@ namespace RailwayTicketSystem.Controllers
             TempData["Success"] = "Compartment added successfully";
             return RedirectToAction("Compartment");
         }
+        [HttpGet]
+        public IActionResult ViewCompartment()
+        {
+            var res = db.Compartments.ToList();
+            return View(res);
+        }
         public IActionResult Train()
         {
             
@@ -85,8 +91,8 @@ namespace RailwayTicketSystem.Controllers
         [HttpGet]
         public IActionResult ViewTrains()
         {
-            var trains = db.Trains.ToList();
-            return View(trains);
+            var res = db.Trains.ToList();
+            return View(res);
         }
     }
 }
