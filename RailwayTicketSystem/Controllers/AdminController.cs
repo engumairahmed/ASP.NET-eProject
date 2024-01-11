@@ -54,15 +54,29 @@ namespace RailwayTicketSystem.Controllers
             return View();
         }
 
-        public IActionResult Train()
+        public IActionResult Compartment()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTrain(TrainDetail Train)
+        public async Task<IActionResult> AddCompartment(Compartment Class)
         {
-            db.TrainDetails.Add(Train);
+            db.Compartments.Add(Class);
+            await db.SaveChangesAsync();
+            TempData["Success"] = "Compartment added successfully";
+            return RedirectToAction("Compartment");
+        }
+        public IActionResult Train()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddTrain(Train Train)
+        {
+            db.Trains.Add(Train);
             await db.SaveChangesAsync();
             TempData["success"] = "Train added successfully";
             return RedirectToAction("Train");
@@ -71,7 +85,7 @@ namespace RailwayTicketSystem.Controllers
         [HttpGet]
         public IActionResult ViewTrains()
         {
-            var trains = db.TrainDetails.ToList();
+            var trains = db.Trains.ToList();
             return View(trains);
         }
     }

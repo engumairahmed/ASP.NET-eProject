@@ -4,19 +4,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RailwayTicketSystem.Models
 {
-    public class TrainSchedule
+    public class TrainCompartment
     {
         [Key]
-        public int ScheduleId { get; set; }
+        public int TC_Id { get; set; }
         public int TrainId { get; set; }
-        public bool Direction { get; set; }
-        public string Date { get; set; }
-        public int RouteId { get; set; }
+
+        public int CompartmentId { get; set; }
+        public int CompartmentCount { get; set; }
 
         [ForeignKey("TrainId")]
         public Train Train { get; set; }
-        [ForeignKey("RouteId")]
-        public TrainRoute Route { get; set; }
-
+        [ForeignKey("CompartmentId")]
+        public Compartment Compartment { get; set; }
     }
 }

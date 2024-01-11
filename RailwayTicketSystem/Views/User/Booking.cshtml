@@ -24,6 +24,7 @@
         </div>
     </section>
     <!-- breadcrumb-area-end -->
+
     <!-- booking-area -->
     <div class="booking-area booking-style-two">
         <div class="container">
@@ -35,8 +36,7 @@
                                 <button class="nav-link active" id="bOOKing-tab" data-bs-toggle="tab"
                                         data-bs-target="#bOOKing-tab-pane" type="button" role="tab"
                                         aria-controls="bOOKing-tab-pane" aria-selected="true">
-                                    <i class="flaticon-flight"></i>air
-                                    BOOKing
+                                    <i class="fas fa-subway"></i>Train Ticket Booking
                                 </button>
                             </li>
                             <li class="nav-item" role="presentation">
@@ -343,6 +343,7 @@
         </div>
     </div>
     <!-- booking-area-end -->
+
     <!-- booking-list-area -->
     <div class="booking-list-area">
         <div class="container">
@@ -364,6 +365,16 @@
                             </div>
                         </div>
                         <div class="widget">
+                            <h2 class="widget-title">Trip Type</h2>
+                            <form action="#" class="flight-stops">
+                                <label for="stopNumber"><i class="fas fa-subway"></i></label>
+                                <select id="stopNumber" name="select" class="form-select" aria-label="Default select example">
+                                    <option value="">One Way</option>
+                                    <option>Round Trip</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="widget">
                             <h2 class="widget-title">Departure Time</h2>
                             <ul class="departure-wrap">
                                 <li><a href="#"><i class="flaticon-sunrise"></i>00:00 - 05:59</a></li>
@@ -371,17 +382,6 @@
                                 <li><a href="#"><i class="flaticon-sunset"></i>12:00 - 17:59</a></li>
                                 <li><a href="#"><i class="flaticon-crescent-moon"></i>18:00 - 23:59</a></li>
                             </ul>
-                        </div>
-                        <div class="widget">
-                            <h2 class="widget-title">Number of Stops</h2>
-                            <form action="#" class="flight-stops">
-                                <label for="stopNumber"><i class="flaticon-flight"></i></label>
-                                <select id="stopNumber" name="select" class="form-select" aria-label="Default select example">
-                                    <option value="">Direct</option>
-                                    <option>One Stops</option>
-                                    <option>Two Stops</option>
-                                </select>
-                            </form>
                         </div>
                         <div class="widget">
                             <h2 class="widget-title">Airlines</h2>

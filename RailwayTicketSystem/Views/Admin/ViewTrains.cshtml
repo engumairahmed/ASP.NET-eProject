@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "_AdminLayout";
 }
-@model IEnumerable<RailwayTicketSystem.Models.TrainDetail>
+@model IEnumerable<RailwayTicketSystem.Models.Train>
 
 <div class="container">
     <!-- DataTales Example -->
@@ -37,8 +37,8 @@
                                 <tr>
                                     <td>@items.TrainNo</td>
                                     <td>@items.TrainName</td>
-                                    <td>@items.NumberOfCompartments</td>
-                                    <td>@items.General</td>
+                                    <td>@items.TrainNo</td>
+                                    <td>@items.TrainCompartments</td>
                                     <td>@items.TrainName</td>
                                 </tr>
                             }

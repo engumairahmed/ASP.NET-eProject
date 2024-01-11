@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model Compartment
+
+<div class="container">
+    <h1>Add Compartment Class Types</h1>
+</div>
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<div class="container mt-3">
+    <form asp-action="AddCompartment" asp-controller="Admin" method="post" class="justify-content-center">
+
+        <div class="row w-75">
+            <div class="col">
+                <label asp-for="CompartmentName"></label>
+                <input asp-for="CompartmentName" class="form-control" />
+                <span asp-validation-for="CompartmentName"></span>
+            </div>
+        </div>
+
+        <div class="row w-75 mt-3">
+            <div class="col">
+                <input type="submit" value="Add" class="btn btn-lg btn-secondary col" />
+            </div>
+        </div>
+
+    </form>
+</div>

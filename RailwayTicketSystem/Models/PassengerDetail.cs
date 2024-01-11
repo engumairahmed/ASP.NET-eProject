@@ -1,21 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RailwayTicketSystem.Models
 {
     public class PassengerDetail
     {
         [Key]
-        public int PassengerId { get; set; }
-
+        public int? Id { get; set; }
         public string? Name { get; set; }
-        public int? Age { get; set; }
+        public int? PNRNumber { get; set; }
+        public string? Age { get; set; }
         public string? Gender { get; set; }
-        public int? TotalPassenger { get; set; }
-        public DateTime? DateOfTravel { get; set; }
-        public string? Class { get; set; }
 
-        // Foreign key
-        public string? TrainNumber { get; set; }
-        public TrainDetail? Train { get; set; }
+        public string? ContactNumber { get; set; }
+
+        [ForeignKey("PNRNumber")]
+        public Reservation PNRNumberId { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RailwayTicketSystem.Models
 {
@@ -11,9 +13,12 @@ namespace RailwayTicketSystem.Models
         public int? Sequence {  get; set; }
         public string? RailwayDivisionName { get; set; }
 
-        // Other properties...
+        [InverseProperty("FromStation")]
+        public ICollection<StationDistance> FromStationDistances { get; set; }
 
-        // Navigation property to TrainSchedules
+        [InverseProperty("ToStation")]
+        public ICollection<StationDistance> ToStationDistances { get; set; }
+        public ICollection<TrainRoute> TrainRoutes { get; set; }
         public ICollection<TrainSchedule> TrainSchedules { get; set; }
     }
 }

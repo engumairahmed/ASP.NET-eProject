@@ -1,22 +1,22 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Diagnostics;
 
 namespace RailwayTicketSystem.Models
 {
-    public class TrainSchedule
+    public class Coach
     {
         [Key]
-        public int ScheduleId { get; set; }
+        public int CoachId { get; set; }
         public int TrainId { get; set; }
-        public bool Direction { get; set; }
-        public string Date { get; set; }
-        public int RouteId { get; set; }
+        public int CompartmentId { get; set; }
+        public int TotalSeats { get; set; }
 
         [ForeignKey("TrainId")]
         public Train Train { get; set; }
-        [ForeignKey("RouteId")]
-        public TrainRoute Route { get; set; }
 
+        [ForeignKey("CompartmentId")]
+        public Compartment Compartment { get; set; }
     }
 }

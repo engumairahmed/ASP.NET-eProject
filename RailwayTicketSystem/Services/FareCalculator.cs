@@ -22,7 +22,7 @@ namespace RailwayTicketSystem.Services
 
         private decimal GetDistance(int fromStationId, int toStationId)
         {
-            var orderedStations = _dbContext.StationDetails
+            var orderedStations = _dbContext.Stations
             .Where(s => s.Sequence>= fromStationId && s.Sequence <= toStationId)
             .OrderBy(s => s.Sequence)
             .ToList();
