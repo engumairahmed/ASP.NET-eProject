@@ -38,9 +38,8 @@
                                     <ul class="navigation">
                                         <li class="active"><a asp-action="index" asp-controller="Home">Home</a></li>
                                         <li><a asp-action="Booking" asp-controller="User">Booking</a></li>
-                                        <li><a href="about.html">Schedules</a></li>
-                                        <li><a href="about.html">About</a></li>
-                                        <li><a href="contact.html">Contact</a></li>
+                                        <li><a asp-action="index" asp-controller="Home">Schedules</a></li>
+                                        <li><a asp-action="index" asp-controller="Home">About</a></li>
                                         @if (User.IsInRole("Admin"))
                                         {
                                             <li><a asp-action="AdminDashboard" asp-controller="Admin">Dhasboard</a></li>

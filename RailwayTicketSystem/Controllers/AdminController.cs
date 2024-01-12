@@ -238,5 +238,11 @@ namespace RailwayTicketSystem.Controllers
             TempData["success"] = "Rule Added Successfully";
             return RedirectToAction("FareRules");
         }
+
+        public IActionResult Users()
+        {
+            var res= db.Users.ToList();
+            return View(res);
+        }
     }
 }
