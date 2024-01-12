@@ -34,11 +34,11 @@ namespace RailwayTicketSystem.Controllers
 
             if (user != null)
             {
-                var result = await _userManager.AddToRoleAsync(user, "Admin");
+                var result = await _userManager.AddToRoleAsync(user, role);
 
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("AdminDashboard", "Admin");
                 }
                 else
                 {
