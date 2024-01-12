@@ -1,0 +1,111 @@
+﻿@using RailwayTicketSystem.Models.ViewModels;
+@{
+    Layout = "_AdminLayout";
+}
+@model FareAddModel
+
+<div class="container">
+    <h1>Add Train</h1>
+</div>
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<div class="container mt-3">
+    <form asp-action="AddFare" asp-controller="Admin" method="post" class="justify-content-center">
+
+        <div class="row w-75">
+            <div class="col">
+                <label asp-for="FareDetail.Train" class="control-label"></label>
+                <select asp-for="FareDetail.Train" asp-items="@(new SelectList(Model.Trains, "T_Id", "TrainName"))" class="form-control">
+                    <option value="">-- Select Train --</option>
+                </select>
+                <span asp-validation-for="FareDetail.Train" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="FareDetail.Compartment" class="control-label"></label>
+                <select asp-for="FareDetail.Compartment" asp-items="@(new SelectList(Model.Compartments, "Id", "CompartmentName"))" class="form-control">
+                    <option value="">-- Select Compartment Class --</option>
+                </select>
+                <span asp-validation-for="FareDetail.Compartment" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="row w-75">
+            <div class="col">
+                <label asp-for="FareDetail.BaseCharges"></label>
+                <input asp-for="FareDetail.BaseCharges" class="form-control" />
+                <span asp-validation-for="FareDetail.BaseCharges"></span>
+            </div>
+            <div class="col">
+                <label asp-for="FareDetail.DistanceCharges"></label>
+                <input asp-for="FareDetail.DistanceCharges" class="form-control" />
+                <span asp-validation-for="FareDetail.DistanceCharges"></span>
+            </div>
+        </div>
+
+
+        <div class="row w-75 mt-4">
+            <div class="col">
+                <input type="submit" value="Save Rule" class="btn btn-lg btn-secondary col" />
+            </div>
+        </div>
+
+    </form>
+</div>
+<div class="container-fliud">
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Compartment Types</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Train</th>
+                        <th>Compartment</th>
+                        <th>Base Fare</th>
+                        <th>Distance Fare</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Train</th>
+                        <th>Compartment</th>
+                        <th>Base Fare</th>
+                        <th>Distance Fare</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @{
+                        foreach (var items in Model.FareDetails)
+                        {
+                            <tr>
+                                <td>@items.fd_id</td>
+                                <td>@items.Train</td>
+                                <td>@items.Compartment</td>
+                                <td>@items.BaseCharges</td>
+                                <td>@items.DistanceCharges</td>
+                            </tr>
+                        }
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+

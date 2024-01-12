@@ -12,8 +12,8 @@ using RailwayTicketSystem.Data;
 namespace RailwayTicketSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240111114002_NewMigration")]
-    partial class NewMigration
+    [Migration("20240111160838_newMigration")]
+    partial class newMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -233,6 +233,9 @@ namespace RailwayTicketSystem.Data.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoachId"), 1L, 1);
+
+                    b.Property<int>("CoachNumber")
+                        .HasColumnType("int");
 
                     b.Property<int>("CompartmentId")
                         .HasColumnType("int");
@@ -666,7 +669,7 @@ namespace RailwayTicketSystem.Data.Migrations
             modelBuilder.Entity("RailwayTicketSystem.Models.TrainCompartment", b =>
                 {
                     b.HasOne("RailwayTicketSystem.Models.Compartment", "Compartment")
-                        .WithMany()
+                        .WithMany("TrainCompartments")
                         .HasForeignKey("CompartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -729,6 +732,8 @@ namespace RailwayTicketSystem.Data.Migrations
                     b.Navigation("Coaches");
 
                     b.Navigation("FareDetails");
+
+                    b.Navigation("TrainCompartments");
                 });
 
             modelBuilder.Entity("RailwayTicketSystem.Models.Station", b =>

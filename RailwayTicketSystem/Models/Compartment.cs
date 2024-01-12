@@ -16,5 +16,7 @@ namespace RailwayTicketSystem.Models
 
         public ICollection<Coach> Coaches { get; set; }
         public ICollection<FareDetail> FareDetails { get; set; }
+        public ICollection<TrainCompartment> TrainCompartments { get; set; }
+
     }
 }

@@ -232,6 +232,9 @@ namespace RailwayTicketSystem.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoachId"), 1L, 1);
 
+                    b.Property<int>("CoachNumber")
+                        .HasColumnType("int");
+
                     b.Property<int>("CompartmentId")
                         .HasColumnType("int");
 
@@ -664,7 +667,7 @@ namespace RailwayTicketSystem.Data.Migrations
             modelBuilder.Entity("RailwayTicketSystem.Models.TrainCompartment", b =>
                 {
                     b.HasOne("RailwayTicketSystem.Models.Compartment", "Compartment")
-                        .WithMany()
+                        .WithMany("TrainCompartments")
                         .HasForeignKey("CompartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -727,6 +730,8 @@ namespace RailwayTicketSystem.Data.Migrations
                     b.Navigation("Coaches");
 
                     b.Navigation("FareDetails");
+
+                    b.Navigation("TrainCompartments");
                 });
 
             modelBuilder.Entity("RailwayTicketSystem.Models.Station", b =>

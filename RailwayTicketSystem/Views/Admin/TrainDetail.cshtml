@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "_AdminLayout";
+}
+@model List<Coach>
+
+  <div class="container">
+      <a asp-action="ViewTrains" asp-controller="Admin" class="btn btn-warning">Back</a>
+  </div>
+
+<div class="container mt-3">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Train Details</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Class Name</th>
+                            <th>Coach Number </th>
+                            <th>Total Seats</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                        <tr>
+                            <th>Class Name</th>
+                            <th>Coach Number </th>
+                            <th>Total Seats</th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{
+                            foreach (var items in Model)
+                            {
+                                <tr>
+                                    <td>@items.Compartment.CompartmentName</td>
+                                    <td>@items.CoachNumber</td>
+                                    <td>@items.TotalSeats</td>                                    
+                                </tr>
+                            }
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,14 @@
-﻿<form method="post" asp-action="Assign" asp-controller="Admin">
-    <label for="email">Email</label>
-    <input type="text" name="email" class="form-control w-50 mt-2" id="email" />
-    <input type="submit" value="Assign" class="btn btn-primary mt-2" />
-</form>
+﻿@{
+    Layout = "_AdminLayout";
+}
+<div class="container">
+    <form method="post" asp-action="Assign" asp-controller="Admin">
+        
+        <label for="email">Email</label>
+        <input type="text" name="email" class="form-control w-50 mt-2" id="email" />
+        <input type="submit" value="Assign" class="btn btn-primary mt-2" />
+        <label for="role">Email</label>
+        <input type="text" name="role" class="form-control w-50 mt-2" id="role" />
+        <input type="submit" value="Assign" class="btn btn-primary mt-2" />
+    </form>
+</div>

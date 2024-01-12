@@ -1,4 +1,5 @@
-﻿@{
+﻿@using RailwayTicketSystem.Models.ViewModels;
+@{
     Layout = "_AdminLayout";
 }
 @model Train
@@ -24,7 +25,7 @@
         <div class="row w-75">
             <div class="col">
                 <label asp-for="TrainName"></label>
-                <input asp-for="TrainName" class="form-control"/>
+                <input asp-for="TrainName" class="form-control" />
                 <span asp-validation-for="TrainName"></span>            
             </div>
             <div class="col">
@@ -34,48 +35,43 @@
             </div>
         </div>
 @* 
-        <div class="row w-75 mt-3">
-            <div class="col">
-                <label asp-for="NumberOfCompartments"></label>
-                <input asp-for="NumberOfCompartments" class="form-control" />
-                <span asp-validation-for="NumberOfCompartments"></span>
-            </div>
-            <div class="col">
-                <label asp-for="AC1"></label>
-                <input asp-for="AC1" class="form-control" />
-                <span asp-validation-for="AC1"></span>
-            </div>
-        </div>
-
-        <div class="row w-75 mt-3">
-            <div class="col">
-                <label asp-for="AC2"></label>
-                <input asp-for="AC2" class="form-control" />
-                <span asp-validation-for="AC2"></span>
-            </div>
-            <div class="col">
-                <label asp-for="AC3"></label>
-                <input asp-for="AC3" class="form-control" />
-                <span asp-validation-for="AC3"></span>
-            </div>
-        </div>
-
-        <div class="row w-75 mt-3">
-            <div class="col">
-                <label asp-for="Sleeper"></label>
-                <input asp-for="Sleeper" class="form-control" />
-                <span asp-validation-for="Sleeper"></span>
-            </div>
-            <div class="col">
-                <label asp-for="General"></label>
-                <input asp-for="General" class="form-control" />
-                <span asp-validation-for="General"></span>
-            </div>
+        <div class="coach-row coach-container">
+            @for (var i = 1; i < Model.Coaches.Count; i++)
+            {
+                <div class="coach-row row w-75 mt-3">
+                    <div class="col">
+                        <label asp-for="Coaches.CoachNumber"></label>
+                        <input asp-for="Coaches.CoachNumber" class="form-control" />
+                        <span asp-validation-for="Coaches.CoachNumber"></span>
+                    </div>
+                    <div class="form-group col">
+                        <label asp-for="Coaches.CompartmentId" class="control-label">Select Compartment</label>
+                        <select asp-for="Coaches.CompartmentId" asp-items="@(new SelectList(Model.Compartments, "Id", "CompartmentName"))" class="form-control">
+                            <option value="">-- Select Compartment --</option>
+                        </select>
+                        <span asp-validation-for="Coaches.CompartmentId" class="text-danger"></span>
+                    </div>
+                    <div class="col">
+                        <label asp-for="Coaches.TotalSeats"></label>
+                        <input asp-for="Coaches[i].TotalSeats" class="form-control" />
+                        <span asp-validation-for="Coaches[].TotalSeats"></span>
+                    </div>
+                    <div class="col">
+                        <button type="button" class="btn mt-2 btn-danger btn-circle remove-coach-btn"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                </div>
+            }
+            <!-- Other rows will be added dynamically here -->
         </div> *@
 
-        <div class="row w-75 mt-3">     
+      @*   <button id="addCoachBtn" type="button" class="btn btn-primary">Add Coach</button> *@
+
+
+
+        
+        <div class="row w-75 mt-4">     
             <div class="col">
-                <input type="submit" value="Add" class="btn btn-lg btn-secondary col" />
+                <input type="submit" value="Add Train" class="btn btn-lg btn-secondary col" />
             </div>
         </div>
 

@@ -1,0 +1,68 @@
+﻿@using RailwayTicketSystem.Models.ViewModels;
+@{
+    Layout = "_AdminLayout";
+}
+@model TrainAddModel
+
+<div class="container">
+    <h1>Add Coach</h1>
+</div>
+
+@if (TempData["Success"] != null)
+{
+
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["success"]
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+<div class="container mt-3">
+    <form asp-action="AddCoach" asp-controller="Admin" method="post" class="justify-content-center">
+
+        <div class="row w-75">
+            <div class="form-group col">
+                <label asp-for="Coach.TrainId" class="control-label">Select Compartment</label>
+                <select asp-for="Coach.TrainId" asp-items="@(new SelectList(Model.Trains, "T_Id", "TrainName"))" class="form-control">
+                    <option value="">-- Select Compartment --</option>
+                </select>
+                <span asp-validation-for="Coach.TrainId" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <label asp-for="Coach.CompartmentId" class="control-label">Select Compartment</label>
+                <select asp-for="Coach.CompartmentId" asp-items="@(new SelectList(Model.Compartments, "Id", "CompartmentName"))" class="form-control">
+                    <option value="">-- Select Compartment --</option>
+                </select>
+                <span asp-validation-for="Coach.CompartmentId" class="text-danger"></span>
+            </div>
+        </div>
+
+            <div class="coach-row row w-75 mt-3">                
+                <div class="col">
+                    <label asp-for="Coach.CoachNumber"></label>
+                    <input asp-for="Coach.CoachNumber" class="form-control" />
+                    <span asp-validation-for="Coach.CoachNumber"></span>
+                </div>
+                <div class="col">
+                    <label asp-for="Coach.TotalSeats"></label>
+                    <input asp-for="Coach.TotalSeats" class="form-control" />
+                    <span asp-validation-for="Coach.TotalSeats"></span>
+                </div>
+            </div>
+        
+       
+
+       
+
+
+        <div class="row w-75 mt-4">
+            <div class="col">
+                <input type="submit" value="Add Coach" class="btn btn-lg btn-secondary col" />
+            </div>
+        </div>
+
+    </form>
+</div>
+

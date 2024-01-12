@@ -4,7 +4,7 @@
 
 namespace RailwayTicketSystem.Data.Migrations
 {
-    public partial class NewMigration : Migration
+    public partial class newMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -84,6 +84,7 @@ namespace RailwayTicketSystem.Data.Migrations
                 {
                     CoachId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    CoachNumber = table.Column<int>(type: "int", nullable: false),
                     TrainId = table.Column<int>(type: "int", nullable: false),
                     CompartmentId = table.Column<int>(type: "int", nullable: false),
                     TotalSeats = table.Column<int>(type: "int", nullable: false)

@@ -17,7 +17,7 @@ namespace RailwayTicketSystem.Models
         [Required]
         public int ToStationId { get; set; }
 
-        [Display(Name = "Distance Between stations in Miles")]
+        [Display(Name = "Distance Between Stations")]
         [Required]
         [Range(0, int.MaxValue, ErrorMessage = "Please enter only Number")]
         public int Distance { get; set; }

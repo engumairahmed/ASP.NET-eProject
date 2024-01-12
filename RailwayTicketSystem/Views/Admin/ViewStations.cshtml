@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "_AdminLayout";
 }
-@model IEnumerable<RailwayTicketSystem.Models.Train>
+@model IEnumerable<RailwayTicketSystem.Models.Station>
 
 <div class="container">
     <!-- DataTales Example -->
@@ -15,17 +15,17 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Train Name</th>
-                            <th>Train Number</th>
-                            <th>Details</th>
+                            <th>Station Code</th>
+                            <th>Sequence</th>
+                            <th>Railway Division</th>
                         </tr>
                     </thead>
                     <tfoot>
                         <tr>
                             <th>ID</th>
-                            <th>Train Name</th>
-                            <th>Train Number</th>
-                            <th>Details</th>
+                            <th>Station Code</th>
+                            <th>Sequence</th>
+                            <th>Railway Division</th>
                         </tr>
                     </tfoot>
                     <tbody>
@@ -33,14 +33,14 @@
                             foreach (var items in Model)
                             {
                                 <tr>
-                                    <td>@items.T_Id</td>
-                                    <td>@items.TrainName</td>
-                                    <td>@items.TrainNo</td>
-                                    <td><a asp-action="TrainDetail" asp-route-id="@items.T_Id" asp-controller="Admin" class="btn btn-info">View</a></td>
+                                    <td>@items.StationId</td>
+                                    <td>@items.StationName</td>
+                                    <td>@items.Sequence</td>
+                                    <td>@items.RailwayDivisionName</td>
                                 </tr>
                             }
-                        }                     
-               
+                        }
+
                     </tbody>
                 </table>
             </div>

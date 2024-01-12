@@ -9,8 +9,11 @@ namespace RailwayTicketSystem.Models
     {
         [Key]
         public int CoachId { get; set; }
+        [Display(Name = "Coach Number")]
+        public int CoachNumber { get; set; }
         public int TrainId { get; set; }
         public int CompartmentId { get; set; }
+        [Display(Name ="Total Seats")]
         public int TotalSeats { get; set; }
 
         [ForeignKey("TrainId")]
